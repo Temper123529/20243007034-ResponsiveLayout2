@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Root layout: vertical LinearLayout, fills entire screen, adds padding to avoid edge clipping -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Title section: takes 1 part of vertical space, displays centered bold title -->
+    <!-- 0dp height + layout_weight is the standard way to use weight in LinearLayout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Responsive Layout 1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <!-- Content section: takes 3 parts of vertical space, centers two text lines -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is my first"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Application"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Button section: horizontal arrangement, two buttons share width equally -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <!-- Cancel button: takes 50% width via horizontal weight -->
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Change button: takes 50% width via horizontal weight -->
+        <Button
+            android:id="@+id/btn_change"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Change"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
